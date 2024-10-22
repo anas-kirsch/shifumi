@@ -57,7 +57,7 @@ int main(){
                 printf("%s a fait CISEAUX ! \n",joueur1);  
         }
             else if (atoi(choix1)== QUITTER){
-                printf("Vous quittez le jeu...");
+                printf("Vous quittez le jeu...");                     
                 break;
         }
             else if (atoi(choix1) > 3)
