@@ -47,7 +47,6 @@ int main(){
 
 
 
-
         
 void aname(char player_name[MAX],int length){
 
