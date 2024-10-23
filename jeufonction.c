@@ -40,75 +40,7 @@ int main(){
         achoix(choix2,MAX,player_two);
 
 
-
-
-
-
-
-        
-
-    //     int score1 = 0;
-    //     int score2 = 0;
-
-        
-
-    //     if (strcmp(choix,"1")==0 && strcmp(choix2,"3")==0){
-    //         printf("La PIERRE bat le CISEAUX %s a GAGNÉ ! \n",player_name);
-    //         score1= score1 +1;
-    //         printf(" Score %s = %d\n",player_name,score1);
-    //         printf(" Score %s = %d\n",player_name, score2);
-
-    //     }
-    //     else if (strcmp(choix,"1")==0 && strcmp(choix2,"2")==0)
-    //     {
-    //         printf("La FEUILLE bat la PIERRE %s a GAGNÉ ! \n",player_name);
-    //         score2= score2 +1;
-    //          printf(" Score %s = %d\n",player_name,score2);
-    //         printf(" Score %s = %d\n",player_name, score1);
-    //     }
-
-    //     else if (strcmp(choix,"2")==0 && strcmp(choix2,"1")==0)
-    //     {
-    //         printf("La FEUILLE bat la PIERRE %s a GAGNÉ ! \n ",player_name);
-    //         score1= score1 +1;
-    //         printf(" Score %s = %d\n",player_name,score1);
-    //         printf(" Score %s = %d\n",player_name, score2);
-    //     }
-
-    //       else if (strcmp(choix,"2")==0 && strcmp(choix2,"3")==0)
-    //     {
-    //         printf("Le CISEAUX bat la FEUILLE %s a GAGNÉ ! \n",player_name);
-    //         score2= score2 +1;
-    //         printf(" Score %s = %d\n",player_name,score2);
-    //         printf(" Score %s = %d\n",player_name, score1);
-    //     }
-
-    //      else if (strcmp(choix,"3")==0 && strcmp(choix2,"2")==0)
-    //     {
-    //         printf("Le CISEAUX bat la FEUILLE %s a GAGNÉ ! \n",player_name);
-    //         score1= score1 +1;
-    //        printf(" Score %s = %d\n",player_name,score1);
-    //         printf(" Score %s = %d\n",player_name, score2);
-    //     }
-    //     else if (strcmp(choix,"3")==0 && strcmp(choix2,"1")==0)
-    //     {
-    //         printf("La PIERRE bat le CISEAUX %s a GAGNÉ !\n ",player_name);
-    //         score2= score2 +1;
-    //         printf(" Score %s = %d\n",player_name,score2);
-    //         printf(" Score %s = %d\n",player_name, score1);
-    //     }
-        
-    //     else if (strcmp(choix,choix2)==0)
-    //     {
-    //         printf("ÉGALITÉ !\n");
-    //         printf("%d\n",score1);
-    //         printf("%d\n",score2);
-
-    //     }
-        
     }
-        
-
 
     return 0;
 }

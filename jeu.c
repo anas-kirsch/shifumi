@@ -39,7 +39,7 @@ int main(){
         printf("1- PIERRE \n");
         printf("2- FEUILLE \n");
         printf("3- CISEAUX \n");
-        printf("0- QUITTER \n");
+        printf("0- QUITTER \n");    
 
         char choix1[MAX];
         memset(choix1,0,sizeof(choix1));
