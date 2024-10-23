@@ -16,13 +16,15 @@ char player_name[MAX];
 char choix[MAX];  
 char choix1[MAX];  
 char choix2[MAX];
+int score1= 0;
+int score2= 0;
 
 
 int main(){
 
-    while (1)
-    {       
+
     
+        
         printf("-------------- SHIFUMI ! --------------\n");
         printf("Entrez le nom du joueur 1... \n");
         aname(player_one,MAX);
@@ -40,7 +42,12 @@ int main(){
         achoix(choix2,MAX,player_two);
 
 
-    }
+        apoint(&score1,&score2,player_one,player_two,choix1,choix2);
+
+
+    
+
+    
 
     return 0;
 }

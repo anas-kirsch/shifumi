@@ -51,83 +51,78 @@ void achoix(char choix[MAX], int length,char* nom){
         printf("%s a fait CISEAUX ! \n",nom);  
     }
     else if (atoi(choix)== QUITTER){
-        printf("Vous quittez le jeu...");                     
-        // break;
+        printf("Vous quittez le jeu...\n");                     
+        
     }
 
-
-    // else if (atoi(choix) > 3)
-    // {
-//         break;
-    // }
-
-
-    // }
 }
         
 
 
-void apoint(int score1,int score2){   
+void apoint(int* score1,int* score2,char* player_one, char* player_two,char* choix1,char* choix2){   
 
-        int score1 = 0;
-        int score2 = 0;
-        int choix1 = 1;
-        int choix2 = 2;
 
+// char choix[MAX];  
     
+
     if (strcmp(choix1,"1")==0 && strcmp(choix2,"3")==0)
         {
             printf("La PIERRE bat le CISEAUX %s a GAGNÉ ! \n",player_one);
-            score1= score1 +1;
-            printf(" Score %s = %d\n",player_one,score1);
-            printf(" Score %s = %d\n",player_two, score2); 
+            // score1= score1 +1;  
+            (*score1)++;
+            printf(" Score %s = % d\n",player_one,*score1);
+            printf(" Score %s = %d\n",player_two, *score2); 
         }
     else if (strcmp(choix1,"1")==0 && strcmp(choix2,"2")==0)
         {
             printf("La FEUILLE bat la PIERRE %s a GAGNÉ ! \n",player_two);
-            score2= score2 +1;
-            printf(" Score %s = %d\n",player_one,score2);
-            printf(" Score %s = %d\n",player_two, score1);
+            (*score2)++;
+            printf(" Score %s = %d\n",player_one,*score1);
+            printf(" Score %s = %d\n",player_two, *score2);
         }
 
     else if (strcmp(choix1,"2")==0 && strcmp(choix2,"1")==0)
         {
             printf("La FEUILLE bat la PIERRE %s a GAGNÉ ! \n ",player_one);
-            score1= score1 +1;
-            printf(" Score %s = %d\n",player_one,score1);
-            printf(" Score %s = %d\n",player_two, score2);
+            (*score1)++;
+            printf(" Score %s = %d\n",player_one,*score1);
+            printf(" Score %s = %d\n",player_two, *score2);
         }
 
     else if (strcmp(choix1,"2")==0 && strcmp(choix2,"3")==0)
         {
             printf("Le CISEAUX bat la FEUILLE %s a GAGNÉ ! \n",player_two);
-            score2= score2 +1;
-            printf(" Score %s = %d\n",player_one,score2);
-            printf(" Score %s = %d\n",player_two, score1);
+            (*score2)++;
+            printf(" Score %s = %d\n",player_one,*score1);
+            printf(" Score %s = %d\n",player_two, *score2);
         }
 
     else if (strcmp(choix1,"3")==0 && strcmp(choix2,"2")==0)
         {
             printf("Le CISEAUX bat la FEUILLE %s a GAGNÉ ! \n",player_one);
-            score1= score1 +1;
-            printf(" Score %s = %d\n",player_one,score1);
-            printf(" Score %s = %d\n",player_two, score2);
+            (*score1)++;
+            printf(" Score %s = %d\n",player_one,*score1);
+            printf(" Score %s = %d\n",player_two, *score2);
         }
     else if (strcmp(choix1,"3")==0 && strcmp(choix2,"1")==0)
         {
             printf("La PIERRE bat le CISEAUX %s a GAGNÉ !\n ",player_two);
-            score2= score2 +1;
-            printf(" Score %s = %d\n",player_one,score2);
-            printf(" Score %s = %d\n",player_two, score1);
+            (*score2)++;
+            printf(" Score %s = %d\n",player_one,*score1);
+            printf(" Score %s = %d\n",player_two, *score2);
         }
-
     else if (strcmp(choix1,choix2)==0)
         {
             printf("ÉGALITÉ !\n");
-            printf("%d\n",score1);
-            printf("%d\n",score2);
+            printf(" Score %s = %d\n",player_one,*score1);
+            printf(" Score %s = %d\n",player_two,*score2);
 
         }
-        
-
+    // else if (choix1 > 3 && choix2 > 3 )
+    // {
+    //     printf("Erreur réessayer ...\n");
+    // }
+     
 }
+
+
