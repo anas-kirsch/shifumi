@@ -23,7 +23,7 @@ char nom;
 void aname(char player_name[MAX],int length);
 void achoix(char choix[MAX], int length,char* nom);
 int achoixbot();
-void screen(char* nom);
+void screen(char* name);
 // void abot(int botchoice); //int //
 void apoint(int* score1,int* scorebot,char* player_one,char* choix1,int botchoice);
 
@@ -37,33 +37,46 @@ int main(){
     printf("---------------------------------------\n");
     printf("Le joueur 2 est BOT_PC... \n\n");
 
-    system("clear");
     
-    screen(nom);
+    system("clear");
+    screen(player_one);
     while (strcmp(choix1,"0")!=0)
     {
-       
+        
 
     
+    printf("---------------------------------------\n");
     achoix(choix1,MAX,player_one);
-  
-    
+   
+
     if (strcmp(choix1,"0")==0)
         {
             break;
         }
-   
+    
+    printf("3\n");
+        sleep(1);
+        printf("2\n");
+        sleep(1);
+        printf("1\n");
+        sleep(1);
+
+    system("clear");
     botchoice = achoixbot();
     // abot(botchoice);
 
-
+        
     
     // printf("%s \n",choix1);
     // printf("%d \n",botchoice);
    
     apoint(&score1, &scoreBOT, player_one, choix1, botchoice);
-
+    screen(player_one);
+    
     }
+    system("clear");
+    
+    // system("clear");
 
     return 0;
 }
@@ -84,11 +97,7 @@ void aname(char player_name[MAX],int length){
 }
 
 
-
-
-
-
-void screen(char * nom){
+void screen(char* nom){
 printf("-------------- SHIFUMI ! --------------\n");
 
     printf("A vous de jouer %s ! \n\n",nom);
@@ -110,6 +119,7 @@ void achoix(char choix[MAX], int length,char* nom){
     fgets(choix,MAX,stdin);
     choix[strlen(choix)-1]=0;
     
+     system("clear");
 
     if(atoi(choix) == PIERRE){
         printf("%s fait PIERRE !\n",nom);
@@ -232,10 +242,12 @@ void apoint(int* score1,int* scoreBOT,char* player_one,char* choix1,int botchoic
     else if (atoi(choix1) == botchoice ) /*strcmp(choix1,botchoice)==0*/
         {
             printf("ÉGALITÉ !\n");
-            printf(" Score %s = %d\n",player_one,*score1);
-            printf(" Score BOT_PC = %d\n",*scoreBOT);
+            printf("Score %s = %d\n",player_one,*score1);
+            printf("Score BOT_PC = %d\n",*scoreBOT);
 
         }
-
+        printf("Appuyez Entrer pour rejouer !\n ");
+        getchar();
+        system("clear");
 }
 
