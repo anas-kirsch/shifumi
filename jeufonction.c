@@ -22,9 +22,11 @@ int score2= 0;
 
 int main(){
 
-
+       
     
-        
+    while (strcmp(choix1,"0")!=0 || strcmp(choix2,"0")!=0)
+    {
+    
         printf("-------------- SHIFUMI ! --------------\n");
         printf("Entrez le nom du joueur 1... \n");
         aname(player_one,MAX);
@@ -33,19 +35,29 @@ int main(){
         aname(player_two,MAX);
 
         
-
-
+        
         printf("-------------- SHIFUMI ! --------------\n");
         achoix(choix1,MAX,player_one);
+
+        
+        if (strcmp(choix1,"0")==0)
+        {
+            break;
+        }
 
         printf("-------------- SHIFUMI ! --------------\n");
         achoix(choix2,MAX,player_two);
 
+        if (strcmp(choix2,"0")==0)
+        {
+            break;
+        }
 
         apoint(&score1,&score2,player_one,player_two,choix1,choix2);
 
 
     
+    }
 
     
 

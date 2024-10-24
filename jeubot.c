@@ -12,33 +12,58 @@
 
 char player_one[MAX];
 char player_name[MAX];
-// char choix[MAX];
+char choix[MAX];
 char choix1[MAX];
 int score1= 0;
 int scoreBOT= 0;
-int botchoice; 
+int botchoice;
+char nom;
 // char BOT_PC; ne sert que si je veux ecrire le nom du bot_pc dans une vaiable dans printf ou autre
+
+void aname(char player_name[MAX],int length);
+void achoix(char choix[MAX], int length,char* nom);
+int achoixbot();
+void screen(char* nom);
+// void abot(int botchoice); //int //
+void apoint(int* score1,int* scorebot,char* player_one,char* choix1,int botchoice);
 
 int main(){
 
-
-
+    system("clear");
     printf("-------------- SHIFUMI ! --------------\n");
     printf("Entrez le nom du joueur 1... \n");
-
     aname(player_one,MAX);
 
     printf("---------------------------------------\n");
     printf("Le joueur 2 est BOT_PC... \n\n");
+
+    system("clear");
+    
+    screen(nom);
+    while (strcmp(choix1,"0")!=0)
+    {
+       
+
     
     achoix(choix1,MAX,player_one);
+  
+    
+    if (strcmp(choix1,"0")==0)
+        {
+            break;
+        }
+   
+    botchoice = achoixbot();
+    // abot(botchoice);
 
-    achoixbot(botchoice);
-    abot(botchoice);
 
-    apoint(score1, scoreBOT, player_one,choix1,botchoice);
+    
+    // printf("%s \n",choix1);
+    // printf("%d \n",botchoice);
+   
+    apoint(&score1, &scoreBOT, player_one, choix1, botchoice);
 
-
+    }
 
     return 0;
 }
@@ -63,19 +88,23 @@ void aname(char player_name[MAX],int length){
 
 
 
-
-
-
-
-void achoix(char choix[MAX], int length,char* nom){
-
-    printf("-------------- SHIFUMI ! --------------\n");
+void screen(char * nom){
+printf("-------------- SHIFUMI ! --------------\n");
 
     printf("A vous de jouer %s ! \n\n",nom);
     printf("1- PIERRE \n");
     printf("2- FEUILLE \n");
     printf("3- CISEAUX \n");
     printf("0- QUITTER \n");
+}
+
+
+
+
+
+void achoix(char choix[MAX], int length,char* nom){
+
+    
 
     memset(choix,0,length);
     fgets(choix,MAX,stdin);
@@ -106,12 +135,25 @@ void achoix(char choix[MAX], int length,char* nom){
 
 
 
-void achoixbot(int botchoice){
+int achoixbot(){
 
     srand(time(NULL));
 
-    botchoice = (float)rand()/RAND_MAX * 3+1;
-    printf("BOT_PC fait %d \n",botchoice);
+    int botchoice = (float)rand()/RAND_MAX * 3+1;
+    // printf("BOT_PC fait %d \n",botchoice);
+    
+        if(botchoice == PIERRE){
+        printf("BOT_PC fait PIERRE !\n");
+        return PIERRE;
+    }
+    else if (botchoice == FEUILLE){
+        printf("BOT_PC fait FEUILLE ! \n");      
+        return FEUILLE;
+    }   
+    else if (botchoice == CISEAUX){
+        printf("BOT_PC fait CISEAUX ! \n");  
+        return CISEAUX;
+    }
     
 }   
 
@@ -120,85 +162,78 @@ void achoixbot(int botchoice){
 
 
 
+// void abot(int botchoice){
 
 
-void abot(char botchoice){
-
-
-    if(botchoice == PIERRE){
-        printf("BOT_PC fait PIERRE !\n");
-    }
-    else if (botchoice == FEUILLE){
-        printf("BOT_PC fait FEUILLE ! \n");      
-    }   
-    else if (botchoice == CISEAUX){
-        printf("BOT_PC fait CISEAUX ! \n");  
-    }
-    }
-
+//     if(botchoice == PIERRE){
+//         printf("BOT_PC fait PIERRE !\n");
+//     }
+//     else if (botchoice == FEUILLE){
+//         printf("BOT_PC fait FEUILLE ! \n");      
+//     }   
+//     else if (botchoice == CISEAUX){
+//         printf("BOT_PC fait CISEAUX ! \n");  
+//     }
+// }
 
 
 
 
+void apoint(int* score1,int* scoreBOT,char* player_one,char* choix1,int botchoice){   
 
 
 
-
-void apoint(int* score1,int* scorebot,char* player_one,char* choix1,char* botchoice){   
-
-
-
-    if (strcmp(choix1,"1")==0 && strcmp(botchoice,"3")==0)
+    if (strcmp(choix1,"1")==0 && botchoice == 3) /*strcmp(choix1,"1")==0 && botchoice == CISEAUX)*/
         {
             printf("La PIERRE bat le CISEAUX %s a GAGNÉ ! \n",player_one);
             // score1= score1 +1;  
             (*score1)++;
             printf(" Score %s = % d\n",player_one,*score1);
-            printf(" Score BOT_PC = %d\n", scoreBOT); 
+            printf(" Score BOT_PC = %d\n", *scoreBOT); 
         }
-    else if (strcmp(choix1,"1")==0 && strcmp(botchoice,"2")==0)
+    else if (strcmp(choix1,"1")==0 && botchoice == 2)
         {
             printf("La FEUILLE bat la PIERRE BOT_PC a GAGNÉ ! \n");
-            (scoreBOT)++;
+            (*scoreBOT)++;
             printf(" Score %s = %d\n",player_one,*score1);
-            printf(" Score BOT_PC = %d\n", scoreBOT);
+            printf(" Score BOT_PC = %d\n", *scoreBOT);
         }
 
-    else if (strcmp(choix1,"2")==0 && strcmp(botchoice,"1")==0)
+    else if (strcmp(choix1,"2")==0 && botchoice == 1)
         {
             printf("La FEUILLE bat la PIERRE %s a GAGNÉ ! \n ",player_one);
             (*score1)++;
             printf(" Score %s = %d\n",player_one,*score1);
-            printf(" Score BOT_PC = %d\n", scoreBOT);
+            printf(" Score BOT_PC = %d\n", *scoreBOT);
         }
 
-    else if (strcmp(choix1,"2")==0 && strcmp(botchoice,"3")==0)
+    else if (strcmp(choix1,"2")==0 && botchoice == 3)
         {
             printf("Le CISEAUX bat la FEUILLE BOT_PC a GAGNÉ ! \n");
-            (scoreBOT)++;
+            (*scoreBOT)++;
             printf(" Score %s = %d\n",player_one,*score1);
-            printf(" Score BOT_PC = %d\n", scoreBOT);
+            printf(" Score BOT_PC = %d\n", *scoreBOT);
         }
 
-    else if (strcmp(choix1,"3")==0 && strcmp(botchoice,"2")==0)
+    else if (strcmp(choix1,"3")==0 && botchoice == 2)
         {
             printf("Le CISEAUX bat la FEUILLE %s a GAGNÉ ! \n",player_one);
             (*score1)++;
             printf(" Score %s = %d\n",player_one,*score1);
-            printf(" Score BOT_PC = %d\n", scoreBOT);
+            printf(" Score BOT_PC = %d\n", *scoreBOT);
         }
-    else if (strcmp(choix1,"3")==0 && strcmp(botchoice,"1")==0)
+    else if (strcmp(choix1,"3")==0 && botchoice == 1)
         {
             printf("La PIERRE bat le CISEAUX BOT_PC a GAGNÉ !\n ");
-            (scoreBOT)++;
+            (*scoreBOT)++;
             printf(" Score %s = %d\n",player_one,*score1);
-            printf(" Score BOT_PC = %d\n", scoreBOT);
+            printf(" Score BOT_PC = %d\n", *scoreBOT);
         }
-    else if (strcmp(choix1,botchoice)==0)
+    else if (atoi(choix1) == botchoice ) /*strcmp(choix1,botchoice)==0*/
         {
             printf("ÉGALITÉ !\n");
             printf(" Score %s = %d\n",player_one,*score1);
-            printf(" Score BOT_PC = %d\n",scoreBOT);
+            printf(" Score BOT_PC = %d\n",*scoreBOT);
 
         }
 
