@@ -54,6 +54,7 @@ int main(){
             break;
         }
     
+    
     printf("3\n");
         sleep(1);
         printf("2\n");
@@ -73,8 +74,10 @@ int main(){
     apoint(&score1, &scoreBOT, player_one, choix1, botchoice);
     screen(player_one);
     
+    
+
     }
-    system("clear");
+    // system("clear");
     
     // system("clear");
 
@@ -92,6 +95,8 @@ void aname(char player_name[MAX],int length){
     memset(player_name,0,length);
     fgets(player_name,MAX,stdin);
     player_name[strlen(player_name)-1]=0;
+
+    /*ex strlen*/
 
     // printf("test %s \n",player_name);
 }
@@ -132,10 +137,9 @@ void achoix(char choix[MAX], int length,char* nom){
     }
     else if (atoi(choix)== QUITTER){
         printf("Vous quittez le jeu...\n");                     
-        
+        return 0;
     }
 }
-
 
 
 
@@ -251,3 +255,28 @@ void apoint(int* score1,int* scoreBOT,char* player_one,char* choix1,int botchoic
         system("clear");
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // if (score1 > 3)
+    // {
+    //   printf("Le vainqueur est %s \n",player_one);
+     
+    // }
+    // else if (scoreBOT > 3 )
+    // {
+    //     printf("Le vainqueur est BOT_PC \n");
+       
+
+    // }

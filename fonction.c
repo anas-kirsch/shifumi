@@ -1,5 +1,3 @@
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -63,7 +61,8 @@ void apoint(int* score1,int* score2,char* player_one, char* player_two,char* cho
 
 
 // char choix[MAX];  
-    
+
+
 
     if (strcmp(choix1,"1")==0 && strcmp(choix2,"3")==0)
         {
