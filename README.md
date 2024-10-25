@@ -18,4 +18,4 @@ Dans ce projet il manque notamment l'implémentation du systeme de sauvegarde po
 
 Outils utilisés pour réaliser le projet : Le langage C, compilateur GCC, LINUX.
 
-  
++ creer la branche joueur vs pc. 
