@@ -14,6 +14,8 @@ J'ai réaliser 3 versions différentes du jeu :
 - Puis un dernier pour 1 joueur et une IA qui contient tout plus quelques effets notamment un meilleur affichage.
 
 
+Dans ce projet il manque notamment l'implémentation du systeme de sauvegarde pour les noms et scores des joueurs.
 
+Outils utilisés pour réaliser le projet : Le langage C, compilateur GCC, LINUX.
 
   
