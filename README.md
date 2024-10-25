@@ -10,8 +10,10 @@ Le jeu propose différentes options et commandes :
 J'ai réaliser 3 versions différentes du jeu :
 
 - Un jeu sans fonctions et qui ne contient pas toutes les fonctionnalités;
-- Une jeu avec fonction et toutes les fonctionnalités;
-- Puis un dernier qui contient tout plus quelques effets notamment un meilleur affichage.
+- Un jeu pour 2 joueurs qui est codé avec des fonctions et toutes les fonctionnalités;
+- Puis un dernier pour 1 joueur et une IA qui contient tout plus quelques effets notamment un meilleur affichage.
+
+
 
 
   
