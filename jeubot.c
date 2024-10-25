@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <unistd.h>
 
 
 #define PIERRE 1
@@ -9,6 +10,7 @@
 #define CISEAUX 3
 #define QUITTER 0
 #define MAX 255
+
 
 char player_one[MAX];
 char player_name[MAX];
@@ -29,7 +31,7 @@ void apoint(int* score1,int* scorebot,char* player_one,char* choix1,int botchoic
 
 int main(){
 
-    system("clear");
+    // system("clear");
     printf("-------------------------------------------------------------\n");
 
     printf(" ..######..##.....##.####.########.##.....##.##.....##.####\n ");
@@ -162,7 +164,7 @@ void achoix(char choix[MAX], int length,char* nom){
     else if (atoi(choix)== QUITTER){
         printf("Vous quittez le jeu...\n");                     
     
-    return 0;
+ 
     }
 }
 
